@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{1A8C7C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "shared\Shared\Shared.csproj", "{50F6E5EC-2C51-4F09-811F-F791FD18DA0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.BussinessLayer", "app\Todo.BussinessLayer\Todo.BussinessLayer.csproj", "{EE715792-2134-44B8-A00B-90880A5F37C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,7 @@ Global
 		{3011B27D-9A73-47D1-A73F-B27551F3CB83} = {38658112-6778-41BD-A580-686DF206341A}
 		{B5FA00E0-8C6A-41D8-885E-0C14D39DB422} = {38658112-6778-41BD-A580-686DF206341A}
 		{50F6E5EC-2C51-4F09-811F-F791FD18DA0D} = {1A8C7C96-CF22-454F-AE34-37FAB3519FC8}
+		{EE715792-2134-44B8-A00B-90880A5F37C7} = {38658112-6778-41BD-A580-686DF206341A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7D3DA73C-8B15-4F9A-8FB8-927D568E6E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -51,5 +54,9 @@ Global
 		{50F6E5EC-2C51-4F09-811F-F791FD18DA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50F6E5EC-2C51-4F09-811F-F791FD18DA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50F6E5EC-2C51-4F09-811F-F791FD18DA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE715792-2134-44B8-A00B-90880A5F37C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE715792-2134-44B8-A00B-90880A5F37C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE715792-2134-44B8-A00B-90880A5F37C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE715792-2134-44B8-A00B-90880A5F37C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Bussiness", "app\Todo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Application", "app\Todo.Application\Todo.Application.csproj", "{6944A93F-3AAB-4608-9FFB-94B7C082A7FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.CQRS", "shared\Shared.CQRS\Shared.CQRS.csproj", "{DE29E65A-88C3-4700-8F4F-1DCC921A13DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,7 @@ Global
 		{50F6E5EC-2C51-4F09-811F-F791FD18DA0D} = {1A8C7C96-CF22-454F-AE34-37FAB3519FC8}
 		{EE715792-2134-44B8-A00B-90880A5F37C7} = {38658112-6778-41BD-A580-686DF206341A}
 		{6944A93F-3AAB-4608-9FFB-94B7C082A7FF} = {38658112-6778-41BD-A580-686DF206341A}
+		{DE29E65A-88C3-4700-8F4F-1DCC921A13DA} = {1A8C7C96-CF22-454F-AE34-37FAB3519FC8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7D3DA73C-8B15-4F9A-8FB8-927D568E6E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -65,5 +68,9 @@ Global
 		{6944A93F-3AAB-4608-9FFB-94B7C082A7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6944A93F-3AAB-4608-9FFB-94B7C082A7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6944A93F-3AAB-4608-9FFB-94B7C082A7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE29E65A-88C3-4700-8F4F-1DCC921A13DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE29E65A-88C3-4700-8F4F-1DCC921A13DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE29E65A-88C3-4700-8F4F-1DCC921A13DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE29E65A-88C3-4700-8F4F-1DCC921A13DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

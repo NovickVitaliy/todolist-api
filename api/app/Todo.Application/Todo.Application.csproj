@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\shared\Shared.CQRS\Shared.CQRS.csproj" />
       <ProjectReference Include="..\Todo.Bussiness\Todo.Bussiness.csproj" />
     </ItemGroup>
 

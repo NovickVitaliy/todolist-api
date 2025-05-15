@@ -1,0 +1,21 @@
+﻿services:
+#  todo.api:
+#    image: todo.api
+#    build:
+#      context: .
+#      dockerfile: app/Todo.API/Dockerfile
+  todo-database:
+    image: datalust/seq:latest
+    container_name: todo-database
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=admin
+      - TZ=Europe/Kyiv
+    ports:
+      - "1433:1433"
+    volumes:
+      - todo-database.volume:/var/opt/mssql
+
+volumes:
+  todo-database.volume:

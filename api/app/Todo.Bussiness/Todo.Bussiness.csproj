@@ -18,8 +18,4 @@
       <ProjectReference Include="..\Todo.DataAccess\Todo.DataAccess.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Services\Implementations\" />
-    </ItemGroup>
-
 </Project>

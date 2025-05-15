@@ -1,6 +1,7 @@
 using Shared;
 using Shared.ErrorHandling;
 using Todo.BussinessLayer.Dtos;
+using Todo.BussinessLayer.Dtos.Requests;
 
 namespace Todo.BussinessLayer.Services.Contracts;
 

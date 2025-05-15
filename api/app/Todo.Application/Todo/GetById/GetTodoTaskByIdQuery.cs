@@ -4,4 +4,4 @@ using Todo.BussinessLayer.Dtos;
 
 namespace Todo.Application.Todo.GetById;
 
-public record GetTodoTaskByIdQuery(int Id) : IQuery<Result<TodoTaskDto?>>;
+public record GetTodoTaskByIdQuery(int Id) : IQuery<Result<TodoTaskDto>>;

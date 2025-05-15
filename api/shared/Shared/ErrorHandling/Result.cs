@@ -7,7 +7,7 @@ public class Result<T>
 {
     public string Description { get; }
     public HttpStatusCode StatusCode { get; }
-    public T Data { get; }
+    public T? Data { get; }
     public string? Location { get; }
     public bool Success { get; }
 

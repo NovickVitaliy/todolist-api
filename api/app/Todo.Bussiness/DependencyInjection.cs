@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Mapster;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Todo.DataAccess;
 
@@ -9,6 +10,7 @@ public static class DependencyInjection
     public static IServiceCollection RegisterBussinessLayer(this IServiceCollection services, IConfiguration configuration)
     {
         services.RegisterDataAccessLayer(configuration);
+        services.AddMapster();
         
         return services;
     }

@@ -1,6 +1,17 @@
 namespace Shared;
 
-public class PagedResult
+public class PagedResult<T>
 {
-    
+    public T[] Items { get; }
+    public int CurrentPage { get; }
+    public int ItemsPerPage { get; }
+    public double TotalPages { get;}
+
+    public PagedResult(T[] items, int currentPage, int itemsPerPage, double totalPages)
+    {
+        Items = items;
+        CurrentPage = currentPage;
+        ItemsPerPage = itemsPerPage;
+        TotalPages = totalPages;
+    }
 }

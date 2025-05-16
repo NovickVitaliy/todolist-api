@@ -5,4 +5,4 @@ using Todo.BussinessLayer.Dtos.Requests;
 
 namespace Todo.Application.Todo.Create;
 
-public record CreateTaskCommand(CreateTodoTaskRequest Request) : ICommand<Result<TodoTaskDto>>;
+public record CreateTodoTaskCommand(CreateTodoTaskRequest Request) : ICommand<Result<TodoTaskDto>>;

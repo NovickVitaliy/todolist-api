@@ -5,7 +5,7 @@
 #      context: .
 #      dockerfile: app/Todo.API/Dockerfile
   todo-database:
-    image: datalust/seq:latest
+    image: mcr.microsoft.com/mssql/server
     container_name: todo-database
     restart: always
     environment:

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.CQRS.PipelineBehaviours;
 using Todo.BussinessLayer;
 
 namespace Todo.Application;
@@ -12,6 +13,7 @@ public static class DependencyInjection
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            cfg.AddOpenBehavior(typeof(LoggingPipelineBehaviour<,>));
         });
 
         return services;

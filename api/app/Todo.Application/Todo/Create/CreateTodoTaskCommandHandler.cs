@@ -1,13 +1,21 @@
 using Shared.CQRS.Commands;
 using Shared.ErrorHandling;
 using Todo.BussinessLayer.Dtos;
+using Todo.BussinessLayer.Services.Contracts;
 
 namespace Todo.Application.Todo.Create;
 
 public class CreateTodoTaskCommandHandler : ICommandHandler<CreateTodoTaskCommand, Result<TodoTaskDto>>
 {
-    public Task<Result<TodoTaskDto>> Handle(CreateTodoTaskCommand request, CancellationToken cancellationToken)
+    private readonly ITodoTaskService _todoTaskService;
+    
+    public CreateTodoTaskCommandHandler(ITodoTaskService todoTaskService)
     {
-        throw new NotImplementedException();
+        _todoTaskService = todoTaskService;
+    }
+    
+    public async Task<Result<TodoTaskDto>> Handle(CreateTodoTaskCommand request, CancellationToken cancellationToken)
+    {
+        return await _todoTaskService.CreateTodoTaskAsync(request.Request);
     }
 }

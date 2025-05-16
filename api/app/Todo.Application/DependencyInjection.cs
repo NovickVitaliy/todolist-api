@@ -9,9 +9,9 @@ public static class DependencyInjection
     public static IServiceCollection RegisterApplicationLayer(this IServiceCollection services, IConfiguration configuration)
     {
         services.RegisterBussinessLayer(configuration);
-        services.AddMediatR(configuration =>
+        services.AddMediatR(cfg =>
         {
-            configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
         });
 
         return services;

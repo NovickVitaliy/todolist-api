@@ -1,12 +1,20 @@
 using MediatR;
 using Shared.CQRS.Commands;
+using Todo.BussinessLayer.Services.Contracts;
 
 namespace Todo.Application.Todo.Delete;
 
 public class DeleteTodoTaskCommandHandler : ICommandHandler<DeleteTodoTaskCommand>
 {
-    public Task<Unit> Handle(DeleteTodoTaskCommand request, CancellationToken cancellationToken)
+    private readonly ITodoTaskService _todoTaskService;
+    
+    public DeleteTodoTaskCommandHandler(ITodoTaskService todoTaskService)
     {
-        throw new NotImplementedException();
+        _todoTaskService = todoTaskService;
+    }
+    public async Task<Unit> Handle(DeleteTodoTaskCommand request, CancellationToken cancellationToken)
+    {
+        await _todoTaskService.DeleteTodoTaskAsync(request.Id);
+        return Unit.Value;
     }
 }

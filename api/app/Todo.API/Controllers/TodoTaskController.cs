@@ -10,6 +10,7 @@ using Todo.BussinessLayer.Dtos.Requests;
 namespace Todo.API.Controllers;
 
 [Route("api/todos")]
+[ApiController]
 public class TodoTaskController : ControllerBase
 {
     private readonly ISender _sender;

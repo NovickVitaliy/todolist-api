@@ -54,7 +54,7 @@ public class TodoTaskRepository : ITodoTaskRepository
 
         var totalCount = await _dbContext.TodoTasks.CountAsync();
         
-        return new PagedResult<TodoTask>(todos, pageNumber, pageSize, Math.Ceiling((double)(totalCount / pageSize)));
+        return new PagedResult<TodoTask>(todos, pageNumber, pageSize, Math.Ceiling((double)totalCount / pageSize));
     }
     
     public async Task DeleteAsync(int id)

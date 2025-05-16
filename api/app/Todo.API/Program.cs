@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using Shared;
 using Todo.API.Extensions;
 using Todo.Application;
 
@@ -6,11 +8,15 @@ using Todo.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.ConfigureSerilogLogging();
+
 builder.Services.RegisterApplicationLayer(builder.Configuration);
 
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
 
 if (app.Environment.IsDevelopment())
 {

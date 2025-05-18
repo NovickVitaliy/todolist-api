@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" Version="6.0.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.msbuild" Version="6.0.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
+        <PackageReference Include="xunit" Version="2.9.2"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+        <ExcludeByFile>
+            **/Commands/*.cs
+            **/Queries/*.cs
+            **/PipelineBehaviours/*.cs
+            **/BaseRequest/*.cs
+            **/ErrorHandling/*.cs
+            **/Configuration/*.cs,
+            **/Models/*.cs,
+            **/Dtos/*.cs,
+            **/Startup.cs
+        </ExcludeByFile>
+        <ExcludeByAttribute>ExcludeFromCodeCoverage</ExcludeByAttribute>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Using Include="Xunit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\app\Todo.API\Todo.API.csproj" />
+      <ProjectReference Include="..\..\app\Todo.Application\Todo.Application.csproj" />
+      <ProjectReference Include="..\..\app\Todo.Bussiness\Todo.Bussiness.csproj" />
+      <ProjectReference Include="..\..\app\Todo.DataAccess\Todo.DataAccess.csproj" />
+      <ProjectReference Include="..\..\app\Todo.Domain\Todo.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

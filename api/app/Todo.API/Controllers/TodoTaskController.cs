@@ -14,15 +14,18 @@ namespace Todo.API.Controllers;
 public class TodoTaskController : ControllerBase
 {
     private readonly ISender _sender;
+    private ILogger<TodoTaskController> _logger;
     
-    public TodoTaskController(ISender sender)
+    public TodoTaskController(ISender sender, ILogger<TodoTaskController> logger)
     {
         _sender = sender;
+        _logger = logger;
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateAsync(CreateTodoTaskRequest request)
     {
+        _logger.LogInformation("ASDADASDASD");
         return (await _sender.Send(new CreateTodoTaskCommand(request))).ToApiResponse();
     }
 

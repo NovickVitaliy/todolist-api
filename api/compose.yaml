@@ -1,9 +1,9 @@
 ﻿services:
-#  todo.api:
-#    image: todo.api
-#    build:
-#      context: .
-#      dockerfile: app/Todo.API/Dockerfile
+  #  todo.api:
+  #    image: todo.api
+  #    build:
+  #      context: .
+  #      dockerfile: app/Todo.API/Dockerfile
   todo-database:
     image: mcr.microsoft.com/mssql/server
     container_name: todo-database

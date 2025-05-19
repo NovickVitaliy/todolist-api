@@ -9,7 +9,7 @@ public interface ITodoTaskService
 {
     Task<Result<TodoTaskDto>> CreateTodoTaskAsync(CreateTodoTaskRequest request);
     Task<Result<TodoTaskDto>> GetTodoTaskByIdAsync(int id);
-    Task<Result<PagedResult<TodoTaskDto>>> GetTodoTasksPaged(int pageNumber, int pageSize);
+    Task<Result<PagedResult<TodoTaskDto>>> GetTodoTasksPagedAsync(int pageNumber, int pageSize);
     Task<Result<TodoTaskDto>> UpdateTodoTaskAsync(int id, UpdateTodoTaskRequest request);
-    Task DeleteTodoTaskAsync(int id);
+    Task<Result<bool>> DeleteTodoTaskAsync(int id);
 }

@@ -32,11 +32,11 @@ public class TodoTaskService : ITodoTaskService
 
         var todoTask = request.Adapt<TodoTask>();
 
-        await _todoTaskRepository.CreateAsync(todoTask);
+        todoTask = await _todoTaskRepository.CreateAsync(todoTask);
 
         var dto = todoTask.Adapt<TodoTaskDto>();
         
-        return Result<TodoTaskDto>.Ok(dto);
+        return Result<TodoTaskDto>.Created($"/api/todos/{dto.Id}", dto);
     }
     
     public async Task<Result<TodoTaskDto>> GetTodoTaskByIdAsync(int id)
@@ -52,7 +52,7 @@ public class TodoTaskService : ITodoTaskService
         return Result<TodoTaskDto>.Ok(dto);
     }
     
-    public async Task<Result<PagedResult<TodoTaskDto>>> GetTodoTasksPaged(int pageNumber, int pageSize)
+    public async Task<Result<PagedResult<TodoTaskDto>>> GetTodoTasksPagedAsync(int pageNumber, int pageSize)
     {
         var validationResult = ValidatePagedRequest(pageNumber, pageSize);
         if (!validationResult.IsValid)
@@ -110,8 +110,15 @@ public class TodoTaskService : ITodoTaskService
         return Result<TodoTaskDto>.Ok(todo.Adapt<TodoTaskDto>());
     }
     
-    public async Task DeleteTodoTaskAsync(int id)
+    public async Task<Result<bool>> DeleteTodoTaskAsync(int id)
     {
+        var todoTask = await _todoTaskRepository.GetByIdAsync(id, false);
+        if (todoTask is null)
+        {
+            return Result<bool>.NotFound(id);
+        }
+        
         await _todoTaskRepository.DeleteAsync(id);
+        return Result<bool>.NoContent();
     }
 }

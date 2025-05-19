@@ -17,6 +17,6 @@ public class GetPagedTodoTaskQueryHandler : IQueryHandler<GetPagedTodoTaskQuery,
     
     public async Task<Result<PagedResult<TodoTaskDto>>> Handle(GetPagedTodoTaskQuery request, CancellationToken cancellationToken)
     {
-        return await _todoTaskService.GetTodoTasksPaged(request.PageNumber, request.PageSize);
+        return await _todoTaskService.GetTodoTasksPagedAsync(request.PageNumber, request.PageSize);
     }
 }

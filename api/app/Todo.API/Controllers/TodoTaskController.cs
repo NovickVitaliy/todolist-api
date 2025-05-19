@@ -14,18 +14,15 @@ namespace Todo.API.Controllers;
 public class TodoTaskController : ControllerBase
 {
     private readonly ISender _sender;
-    private ILogger<TodoTaskController> _logger;
     
-    public TodoTaskController(ISender sender, ILogger<TodoTaskController> logger)
+    public TodoTaskController(ISender sender)
     {
         _sender = sender;
-        _logger = logger;
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateAsync(CreateTodoTaskRequest request)
     {
-        _logger.LogInformation("ASDADASDASD");
         return (await _sender.Send(new CreateTodoTaskCommand(request))).ToApiResponse();
     }
 
@@ -50,7 +47,6 @@ public class TodoTaskController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteAsync(int id)
     {
-        await _sender.Send(new DeleteTodoTaskCommand(id));
-        return NoContent();
+        return (await _sender.Send(new DeleteTodoTaskCommand(id))).ToApiResponse();
     }
 }

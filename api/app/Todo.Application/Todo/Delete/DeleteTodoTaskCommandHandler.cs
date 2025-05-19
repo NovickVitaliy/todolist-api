@@ -1,10 +1,11 @@
 using MediatR;
 using Shared.CQRS.Commands;
+using Shared.ErrorHandling;
 using Todo.BussinessLayer.Services.Contracts;
 
 namespace Todo.Application.Todo.Delete;
 
-public class DeleteTodoTaskCommandHandler : ICommandHandler<DeleteTodoTaskCommand>
+public class DeleteTodoTaskCommandHandler : ICommandHandler<DeleteTodoTaskCommand, Result<bool>>
 {
     private readonly ITodoTaskService _todoTaskService;
     
@@ -12,9 +13,8 @@ public class DeleteTodoTaskCommandHandler : ICommandHandler<DeleteTodoTaskComman
     {
         _todoTaskService = todoTaskService;
     }
-    public async Task<Unit> Handle(DeleteTodoTaskCommand request, CancellationToken cancellationToken)
+    public async Task<Result<bool>> Handle(DeleteTodoTaskCommand request, CancellationToken cancellationToken)
     {
-        await _todoTaskService.DeleteTodoTaskAsync(request.Id);
-        return Unit.Value;
+        return await _todoTaskService.DeleteTodoTaskAsync(request.Id);
     }
 }

@@ -1,9 +1,19 @@
 ﻿services:
-  #  todo.api:
-  #    image: todo.api
-  #    build:
-  #      context: .
-  #      dockerfile: app/Todo.API/Dockerfile
+  todo.api:
+    container_name: todo.api
+    image: todo.api
+    build:
+      context: .
+      dockerfile: app/Todo.API/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ConnectionStrings__Default=Server=todo-database;Database=AuthDb;User Id=sa;Password=SwN12345678;Encrypt=False;TrustServerCertificate=True
+    ports:
+      - "8090:8080"
+    depends_on:
+      - todo-database
+     
   todo-database:
     image: mcr.microsoft.com/mssql/server
     container_name: todo-database

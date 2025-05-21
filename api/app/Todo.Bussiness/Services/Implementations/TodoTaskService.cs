@@ -66,7 +66,8 @@ public class TodoTaskService : ITodoTaskService
                 data.Items.Select(x => x.Adapt<TodoTaskDto>()).ToArray(),
                 data.CurrentPage,
                 data.ItemsPerPage,
-                data.TotalPages);
+                data.TotalPages,
+                data.TotalItemsCount);
         
         return Result<PagedResult<TodoTaskDto>>.Ok(result);
     }

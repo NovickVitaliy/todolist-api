@@ -147,7 +147,7 @@ public class TodoTaskServiceTests
                 Name = "123",
                 Status = Status.InProgress
             }
-        ], pageNumber, pageSize, Math.Ceiling((double)1 / pageSize));
+        ], pageNumber, pageSize, Math.Ceiling((double)1 / pageSize), 1);
 
         TodoTaskDto[] expectedDtos = [
             new TodoTaskDto(1, "123", string.Empty, DateOnly.MaxValue, Status.InProgress)

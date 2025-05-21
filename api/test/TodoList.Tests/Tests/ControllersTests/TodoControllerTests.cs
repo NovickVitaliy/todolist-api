@@ -118,7 +118,7 @@ public class TodoControllerTests
             new TodoTaskDto(1, "First", string.Empty, DateOnly.MaxValue, Status.Todo)
         ];
 
-        var expectedResult = Result<PagedResult<TodoTaskDto>>.Ok(new PagedResult<TodoTaskDto>(dtos, pageNumber, pageSize, 1));
+        var expectedResult = Result<PagedResult<TodoTaskDto>>.Ok(new PagedResult<TodoTaskDto>(dtos, pageNumber, pageSize, 1, 1));
         _mockSender.Setup(x => x.Send(It.Is<GetPagedTodoTaskQuery>(q => q.PageNumber == pageNumber && q.PageSize == pageSize), CancellationToken.None))
             .ReturnsAsync(expectedResult);
 

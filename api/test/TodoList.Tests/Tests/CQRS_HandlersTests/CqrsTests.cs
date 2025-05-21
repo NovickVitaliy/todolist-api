@@ -116,7 +116,7 @@ public class CqrsTests
         ];
         var cmd = new GetPagedTodoTaskQuery(pageNumber, pageSize);
         var expectedResponse = Result<PagedResult<TodoTaskDto>>.Ok(
-                new PagedResult<TodoTaskDto>(expectedDtos, pageNumber, pageSize, (double)pageNumber / pageSize));
+                new PagedResult<TodoTaskDto>(expectedDtos, pageNumber, pageSize, (double)pageNumber / pageSize, 1));
         _mockTodoTaskService.Setup(x => x.GetTodoTasksPagedAsync(pageNumber, pageSize)).ReturnsAsync(expectedResponse);
         
         var handler = new GetPagedTodoTaskQueryHandler(_mockTodoTaskService.Object);
